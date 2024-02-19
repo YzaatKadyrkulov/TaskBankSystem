@@ -1,66 +1,56 @@
+import java.awt.image.PackedColorModel;
+
 public class Account {
-    double[] balances;
+    String name;
+    double balance;
 
-    public Account(){
-        this.balances = new double[0];
+    public Account() {
 
     }
 
-    public double[] checkBalances(double[]array, double balance){
-        double[] newBalance1 = new double[array.length+1];
-        for(int i=0; i < array.length; i++){
-            newBalance1[i] = array[i];
-
-        }
-        newBalance1[array.length] = balance;
-        return newBalance1;
+    public Account(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
     }
-    public void getBalances(){
-        double count = 0;
-        for(double j : balances){
-            count += j;
-        }
-        System.out.println(count);
+
+    public void checkBalance() {
+        System.out.println("Current balance for " + name + " is: " + balance);
     }
-    public double[] withdrawMoney(double balance){
-        double[] newBalance2 = new double[balances.length];
-        for (int i = 0; i <balances.length ; i++) {
-            if(balances[i] >=balance){
-                balances[i] -= balance;
-                newBalance2[i] = balances[i];
-                return newBalance2;
-            }else{
-                System.out.println("Your balance is lower than you show!"+ balance);
-            }
-            
-        }
-        return balances;
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println(amount + " deposited successfully to " + name + ". New balance is: " + balance);
     }
-    public double[] transaction(double num){
-        double[] acceptBalance = new double[balances.length];
-        boolean transactionSuccess = false;
-        double numTransaction = 0;
 
-        for (int i = 0; i <balances.length ; i++) {
-            if(balances[i] >=num){
-                acceptBalance[i] += num;
-                transactionSuccess = true;
-                break;
-            }
-            
+    public void withdrawal(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println(amount + " withdrawn successfully from " + name + ". New balance is: " + balance);
+        } else {
+            System.out.println("Insufficient funds in " + name + " account.");
         }
-        if(transactionSuccess){
-            for (int i = 0; i <balances.length ; i++) {
-                balances[i] -= numTransaction;
-                
-            }
-            return acceptBalance;
-        }else {
-            System.out.println("Your balance is not enough!");
-            return new double[0];
+    }
 
-
+    public void transaction(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            balance += amount;
+            System.out.println(amount + " transferred successfully from " + name + " to " + balance);
+            System.out.println(name + "'s new balance: " + balance);
+            System.out.println(balance + "'s new balance: " + balance);
+        } else {
+            System.out.println("Insufficient funds in " + name + " account for transaction.");
         }
+    }
+    public void setBalance(double balance ){
+
+        this.balance = balance;
+    }
+    public double getBalance(){
+        return balance;
     }
 
 }
+
+
+
