@@ -55,14 +55,13 @@ public class Main {
                         System.out.println("Enter the amount to top up the balance: ");
                         double num = scanner.nextDouble();
                         account.deposit(num);
-//                        System.out.println("My balance " + num + " added to the displayed amount!");
+
                     }
                     case 3 -> {
                         System.out.println("Enter the deductible amount: ");
                         double num = scanner.nextInt();
                         account.withdrawal(num);
-//                        System.out.println("Your balance after withdrawal: "+ num);
-                        
+
 
                     }
                     case 4 -> {
