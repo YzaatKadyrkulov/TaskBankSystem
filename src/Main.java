@@ -54,16 +54,16 @@ public class Main {
                     case 2 -> {
                         System.out.println("Enter the amount to top up the balance: ");
                         double num = scanner.nextDouble();
-                        account.withdrawal(num);
-                        account.checkBalance();
-                        System.out.println("My balance " + num + " added to the displayed amount!");
+                        account.deposit(num);
+//                        System.out.println("My balance " + num + " added to the displayed amount!");
                     }
                     case 3 -> {
                         System.out.println("Enter the deductible amount: ");
                         double num = scanner.nextInt();
                         account.withdrawal(num);
-                        System.out.println("Your balance after withdrawal: ");
-                        account.checkBalance();
+//                        System.out.println("Your balance after withdrawal: "+ num);
+                        
+
                     }
                     case 4 -> {
                         System.out.println("What names do you wanna enter? Write the name and surname:"+ scanner.nextLine());

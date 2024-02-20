@@ -14,20 +14,20 @@ public class Account {
     }
 
     public void checkBalance() {
-        System.out.println("Current balance for " + name + " is: " + balance);
+        System.out.println("Your balance is  : " + balance);
     }
 
     public void deposit(double amount) {
         balance += amount;
-        System.out.println(amount + " deposited successfully to " + name + ". New balance is: " + balance);
+        System.out.println("You have topped up your balance with: " + balance);
     }
 
     public void withdrawal(double amount) {
         if (amount <= balance) {
             balance -= amount;
-            System.out.println(amount + " withdrawn successfully from " + name + ". New balance is: " + balance);
+            System.out.println("You have accepted your balance : " + balance);
         } else {
-            System.out.println("Insufficient funds in " + name + " account.");
+            System.out.println("Insufficient funds in account");
         }
     }
 
@@ -35,11 +35,11 @@ public class Account {
         if (amount <= balance) {
             balance -= amount;
             balance += amount;
-            System.out.println(amount + " transferred successfully from " + name + " to " + balance);
-            System.out.println(name + "'s new balance: " + balance);
-            System.out.println(balance + "'s new balance: " + balance);
+            System.out.println(amount + " transferred successfully  to Elon Musk " );
+            System.out.println( " new balance: " + balance);
+            System.out.println(balance + "  new balance balance");
         } else {
-            System.out.println("Insufficient funds in " + name + " account for transaction.");
+            System.out.println("Insufficient funds in  account for transaction.");
         }
     }
     public void setBalance(double balance ){
